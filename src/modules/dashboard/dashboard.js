@@ -39,8 +39,8 @@ class Dashboard extends Component {
 
     callApi(input, uri, results) {
         api.getPlanetSuggestions(input, uri, (response) => {
-            if (response != null && response.body != null) {
-                const resultNode = response.body;
+            if (response != null && response.data != null) {
+                const resultNode = response.data;
                 results = [...results].concat(resultNode.results || []);
                 this.setState({ planets: results });
                 if (resultNode.next) {
